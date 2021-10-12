@@ -12,9 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('child');
+    return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('drills/new', 'DrillsController@new')->name('drills.new');
+
+Route::post('/drills', 'DrillsController@create')->name('drills.create');
+
